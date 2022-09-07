@@ -1,9 +1,12 @@
 import './index.css';
+import Render from "./components/Render";
 
 function App() {
   return (
     <div className="App">
+      <Render>
 
+      </Render>
     </div>
   );
 }
