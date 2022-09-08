@@ -8,7 +8,7 @@ class Render extends React.Component{
         return(
             <div>
                 {data.map((item) => (
-                    <div id={item.id} className="news m-5 ">
+                    <div key={item.id} className="news m-5 ">
 
                         {item.isSpecial ? <div className="danger">особая новость</div> : null}
 
@@ -25,18 +25,17 @@ class Render extends React.Component{
                         {item.categories ?
                             <ul>
                                 {item.categories.map((cat) => (
-                                    <li id={cat.id}>{cat.name}</li>
+                                    <li key={cat.id}>{cat.name}</li>
                                 ))}
                             </ul>
 
                             : null
                         }
 
-
                         {item.link ?
-                            <button className=" btn btn-primary">
+                            <div className=" btn btn-primary">
                                 <a href={item.link}>link</a>
-                            </button>
+                            </div>
                             : null
                         }
 
@@ -44,7 +43,7 @@ class Render extends React.Component{
 
                         {item.photo ?
                             <div>
-                                <img src={item.photo}/>
+                                <img src={item.photo} alt="картинка"/>
                             </div>
                             : null
                         }
